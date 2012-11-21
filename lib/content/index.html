@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="/js/head.min.js"></script>
+    <script type="text/javascript">
+        head.js("plugins/client");
+    </script>
+    <style>
+        body
+        {
+            display : none;
+        }
+    </style>
+</head>
+<body ng-controller="WHIMUICtrl">
+<div id="topToolbar">
+    <button id="btnDesignMode" ng-click="toggleDesignMode()">{{designModeText}}</button>
+</div>
+<div id="widgetToolbox" ui-jq="accordion" ui-options="{header:'> div > h3'}" ng-show="designMode">
+    <div ng-repeat="group in widgets">
+        <h3>{{group.group.name}}</h3>
+        <div>
+            <ul id="widgetGroup" ng-repeat="widget in group.group.widgets">
+                <li class="widgetTool">{{widget.widget.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="layout-grid" ui-jq="gridster">
+    <ul>
+        <li class="widget" data-row="1" data-col="1" data-sizex="2" data-sizey="1"></li>
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
+    </ul>
+</div>
+</body>
+</html>

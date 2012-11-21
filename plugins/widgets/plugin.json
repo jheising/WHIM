@@ -1,0 +1,7 @@
+{
+	"widgets" : [{
+	"name" : "Label",
+	"description" : "",
+	"script" : "label-client.js"
+				 }]
+}
